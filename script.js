@@ -62,7 +62,17 @@ function desencriptar(frase) {
 }
 
 function copiar() {
-    navigator.clipboard.writeText(texto_mensaje.value);
+    // navigator.clipboard.writeText(texto_mensaje.value);
+    texto_encriptado.value  = texto_mensaje.value;
+    texto_mensaje.value = "";
+    btn_copiar.style.display = "none";
+    let windowWidth = window.innerWidth;
+    if (windowWidth > 800) {
+        texto_mensaje.style.backgroundImage = "url('imagenes/Muñeco.png')";
+    }else{
+        let campo_desencriptado = document.querySelector(".campo-desencriptado");
+        campo_desencriptado.style.height = "10vh";
+    }
 }
 
 function checkWidth() {
